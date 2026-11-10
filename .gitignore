@@ -3,3 +3,8 @@
 __pycache__/
 *.py[cod]
 *.log
+/resources/
+/.venv/
+/.tools/
+/.local-tools.json
+/local-check*/
