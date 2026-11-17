@@ -51,6 +51,8 @@ def main():
         for field in ("fetchWidth", "decodeWidth", "renameWidth", "dispatchWidth",
                       "issueWidth", "wbWidth", "commitWidth"):
             setattr(cpu, field, cfg.width)
+        # Bursts of memory completions can fill multiple writeback cycles.
+        cpu.forwardComSize = 16
         cpu.numROBEntries = 192
         cpu.instQueues = [IQUnit(numEntries=64)]
         cpu.numPhysIntRegs = 256
